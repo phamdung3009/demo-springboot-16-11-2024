@@ -1,0 +1,54 @@
+API (Application Programming Interface) là một tập hợp các quy tắc và giao thức cho phép các ứng dụng phần mềm giao tiếp 
+và tương tác với nhau. API định nghĩa cách các yêu cầu và phản hồi được định dạng, giúp các ứng dụng hoặc dịch vụ trao 
+đổi dữ liệu mà không cần phải biết cách hoạt động bên trong của hệ thống khác
+API là cầu nối giữa các hệ thống phần mềm, giúp chúng giao tiếp với nhau một cách có tổ chức và nhất quán. Các thành phần chính của API bao gồm endpoint, 
+request, response, status code, authentication, và documentation.
+Các thành phần chính của API
+1, Endpoint
+	Endpoint là 1 URL hoặc URI mà tại đó API có thể được truy cập. Mỗi Endpoint tương ứng với 1 tài nguyên cụ thể trên server
+	VD: https://api.example.com/users/123 là một endpoint để truy cập thông tin của người dùng có ID 123.
+2, Request
+	là 1 yêu cầu mà client(ứng dụng hoặc trình duyệt) gửi đến server thông qua API
+	1 yêu cầu bao gồm các thành phần
+		- HTTP Method: định nghĩa hành động mà client muốn thực hiên trên tài nguyên (GET, POST, PUT, DELETE)
+		- Headers: chứa thông tin meta về yêu cầu(như định dạng dữ liệu, token xác thực)
+		- Body: dữ liệu kèm theo yêu cầu(thường chí có với các yêu cầu như POST, PUT)
+3, HTTP Methods:
+	Đây là các hành động bạn có thể thực hiện với API thông qua HTTP:
+		GET: Lấy dữ liệu từ server.
+		POST: Tạo mới tài nguyên trên server.
+		PUT: Cập nhật toàn bộ tài nguyên hiện có.
+		PATCH: Cập nhật một phần tài nguyên hiện có.
+		DELETE: Xóa tài nguyên trên server.
+4, Response (Phản hồi):
+	Sau khi server nhận được yêu cầu, nó sẽ phản hồi lại client. Phản hồi này chứa thông tin về kết quả của hành động đã yêu cầu.
+	Một phản hồi bao gồm:
+		Status Code: Mã trạng thái HTTP (200 OK, 404 Not Found, 500 Internal Server Error).
+		Headers: Chứa thông tin về phản hồi, chẳng hạn như kiểu dữ liệu trả về (JSON, XML).
+		Body: Dữ liệu trả về từ server (có thể là JSON hoặc XML).
+5, Status Code:
+	Mỗi phản hồi từ API sẽ bao gồm một mã trạng thái HTTP để cho biết trạng thái của yêu cầu:
+		2xx: Thành công (200 OK, 201 Created).
+		4xx: Lỗi từ phía client (400 Bad Request, 404 Not Found).
+		5xx: Lỗi từ phía server (500 Internal Server Error).
+6, Authentication and Authorization:
+	Xác thực (Authentication): Quá trình xác minh danh tính người dùng để truy cập API (thường sử dụng token hoặc API key).
+	Phân quyền (Authorization): Xác định quyền của người dùng để xem hoặc thực hiện các hành động cụ thể thông qua API.
+7, Rate Limiting:
+	Rate Limiting là giới hạn số lượng yêu cầu mà một client có thể gửi đến API trong một khoảng thời gian nhất định. 
+	Điều này ngăn chặn việc lạm dụng tài nguyên của server.
+8, API Documentation:
+	Tài liệu API là hướng dẫn chi tiết mô tả các endpoint, cách gửi yêu cầu, định dạng phản hồi, và các tham số mà API yêu cầu. 
+	Tài liệu giúp người dùng hiểu cách tương tác với API.
+Các loại API
+	Open API (Public API): API có sẵn cho bất kỳ ai sử dụng mà không cần xin phép.
+	Partner API: API chỉ có thể truy cập bởi các đối tác kinh doanh cụ thể.
+	Internal API (Private API): API chỉ được sử dụng trong nội bộ của một tổ chức.
+VD về API:
+URL: /api/users
+Method: GET
+Response:
+	[
+	  {"id": 1, "name": "A", "email": "a@example.com"},
+	  {"id": 2, "name": "B", "email": "B@example.com"}
+	]
